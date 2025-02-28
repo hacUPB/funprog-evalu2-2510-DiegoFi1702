@@ -50,15 +50,62 @@ En informática, un dispositivo de entrada/salida (E/S) es aquel que permite tan
 
 ### 4. ¿Qué es el software? 
 
+#### A) Software de sistema: 
+El software de sistema, también llamado software de base, es el conjunto de programas básicos que administran las funciones mínimas de un sistema informático. Este tipo de software suele venir preinstalado en el computador y tiene como propósito dar soporte a otros tipos de programas informáticos y garantizar el control digital del hardware.
 
+#### B) Software de aplicación:
+Es un tipo específico de programas, también llamado “aplicación”, cuya función es permitir al usuario llevar a cabo tareas de distinto tipo y finalidad, como pueden ser trabajos, cálculos, navegación web, videojuegos y cualquier otro fin distinto al mantenimiento del sistema. En esto se diferencia del software de sistema.
 
+#### C) Software de desarrollo:
+El software de desarrollo es un conjunto de herramientas, aplicaciones, y marcos de trabajo (frameworks) diseñados para permitir a los programadores y desarrolladores crear, probar, mantener y desplegar software de forma eficiente y efectiva. Este tipo de software engloba desde programas básicos hasta soluciones integradas de alto nivel que facilitan la creación de aplicaciones y sistemas complejos.
 
+### 5 Funcionamiento del computador.
 
+#### A) ¿Qué procesos se llevan a cabo cuando se enciende una computadora? 
+Existen 3 tipos de arranque: El arranque de disco duro, arranque de red sin disco y un arranque de mantenimiento.
+Nos centraremos en el arranque de disco duro.
+1. Se pulsa el botón de encendido.
+2. El hardware comienza a funcionar, su primer trabajo consiste en ejecutar el POST (power on self test).
 
+2.2. Cuando el hardware al recibir alimentación comienza a funcionar, su primera tarea consiste en realizar unas pruebas de autodiagnóstico. Si las comprobaciones no encuentran ningún error, el dispositivo reanuda su funcionamiento normal. En el caso de la CPU, una vez que completa su inicialización comienza a cargar instrucciones desde la memoria principal y ejecutarlas. La dirección de memoria a la que la CPU acude por primera vez para cargar instrucciones corresponde a un área de memoria no volátil. En el caso de los PCs este área de memoria corresponde a la BIOS (Basic Input Output System). 
 
+3. Se carga y ejecuta el gestor de arranque.
 
+3.3 El gestor de arranque (bootloader) está almacenado en el MBR (Master Boot Record). La BIOS carga su contenido en memoria principal, y cede el control del sistema, al iniciar su ejecución.
 
+La función principal del gestor de arranque es encontrar la imagen del núcleo, cargarla en memoria principal y comenzar su ejecución. Para ello puede interaccionar con el usuario (permitiendo escoger entre diferentes núcleos alternativos), o incluso alterar la tabla de particiones del disco (para ocultar, hacer visible o cambiar alguna partición).
 
+4. Se carga y ejecuta el sistema operativo.
+
+4.4 Cuando el gestor de arranque carga la imagen del núcleo en memoria principal, cede el control del sistema al núcleo y comienza la ejecución del sistema operativo.
+
+El sistema operativo inicia su propia secuencia de arranque, en la que normalmente detecta y configura el hardware disponible. Después crea el primer proceso siguiendo la ejecución de uno o varios scripts, inicia los servicios que estén configurados.
+
+#### B)¿Qué sucede cuando ingreso un dato en el teclado hasta que lo veo en pantalla?
+
+A cada tecla de un teclado se le asigna un valor único denominado código de tecla, un identificador dependiente del dispositivo para la tecla del teclado. Un teclado genera dos códigos de tecla cuando el usuario pulsa una tecla: uno cuando el usuario presiona la tecla y otro cuando el usuario suelta la tecla.
+
+El controlador de dispositivo de teclado interpreta un código de tecla y lo traduce (asigna) a un código de tecla virtual, un valor independiente del dispositivo definido por el sistema que identifica el propósito de una tecla. Una vez traducido un código de tecla, el diseño del teclado crea un mensaje que incluye el código de tecla, el código de tecla virtual y otra información sobre la pulsación de tecla y, después, coloca el mensaje en la cola de mensajes del sistema. El sistema quita el mensaje de la cola de mensajes del sistema y lo envía a la cola de mensajes del subproceso adecuado. Finalmente, el bucle de mensajes del subproceso quita el mensaje y lo pasa al procedimiento de ventana adecuado para su procesamiento.
+
+Esquema de ejemplo:
+
+![esquema](/Imagenes/KEY%20Schem.png)
+
+#### C) ¿Cómo se codifican los datos internamente en el computador? 
+Dentro del ordenador la información se representa en sistema binario, es decir unos y ceros, esto debido a que inicialmente existian 2 estados eléctricos básicos: Tensión y aunsencia de tensión. Estos datos son la unidad básica "BIT" o binary digit.
+
+#### D) ¿Cuáles son las unidades de medida de datos en un computador? 
+BIT: Es la unidad mínima de información empleada en informática.
+
+Byte: Equivale a 8 bits. Con dos bytes guardas o procesas una letra.
+
+Kilobyte: 1024 bytes forman un Kilobyte.
+
+Megabyte: Equivale a 1024 Kilobytes. 
+
+Gigabyte: Es igual a 1024 Megabytes. Es la unidad de medida que se suele usar para determinar la capacidad de almacenamiento de las USB.
+
+Terabyte: Lo componen 1024 Gigabytes. Muchas veces esta medida determina la capacidad de almacenamiento de los discos duros.
 
 ### Fuentes
 ¿Qué es un computador? 
@@ -78,3 +125,15 @@ Hardware
 > https://ayudaleyprotecciondatos.es/2020/07/23/memoria-cache/
 > https://www.intel.com/content/www/us/en/tech-tips-and-tricks/computer-ram.html#:~:text=By-,What%20Is%20RAM%3F,applications%20and%20open%20your%20files.
 > https://www-sciencedirect-com.translate.goog/topics/computer-science/secondary-memory?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=sge#:~:text=La%20memoria%20secundaria%2C%20también%20conocida,más%20costosa%20de%20una%20computadora.
+
+Software
+> https://concepto.de/software-de-sistema/
+>https://concepto.de/software-de-aplicacion/
+>https://desarrollodesoftware.dev/que-es-software-de-desarrollo-y-ejemplos
+
+Funcionamiento del computador
+>https://elpuig.xeill.net/Members/vcarceler/c1/didactica/apuntes/ud3/na8
+>https://learn.microsoft.com/es-es/windows/win32/inputdev/about-keyboard-input
+>https://www.oposinet.com/temario-de-informatica/temario-3-informatica/tema-10-representacin-interna-de-los-datos-2/#:~:text=Dentro%20del%20ordenador%2C%20la%20información,el%20bit%20o%20BInary%20digiT.
+>https://edu.gcfglobal.org/es/cultura-tecnologica/medidas-de-almacenamiento-de-informacion/1/
+
